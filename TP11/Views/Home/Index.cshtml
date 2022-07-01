@@ -1,0 +1,15 @@
+﻿<div class="row">
+        @foreach (Curso Cursos in ViewBag.ListaCurso)
+        {
+            <div class="card levantar card text-white mb-3" style="width: 18rem; margin-top:2rem; margin-right:2rem; background-color:#1e304c;">
+                <img src="@Cursos.Imagen" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h1 class="card-tittle">@Cursos.Nombre </h1>
+                    <a class="btn btn-danger" href='@Url.Action("VerCurso","Home",new {IdCurso=@Cursos.IdCurso})'>Mas Info</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<br><br><br><br><br><br>

@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12">
+    <center>
+        <div class="card levantar card text-white mb-3" style="background-color:#1e304c; width: 100%; margin-top:2rem;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                <img style="height:100%;" src="@ViewBag.Curso.Imagen" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body" style="font-size:3rem;">
+                        <h1 class="card-title">@ViewBag.Curso.Nombre</h1>
+                        <h2  class="card-text">@ViewBag.Curso.Descripcion</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @Html.Raw(ViewBag.Curso.UrlCurso)
+
+
+    <div class="row" style="justify-content: center;">
+        <a class="btn btn-warning botino1" href='@Url.Action("Calificar","Home",new {IdCurso=@ViewBag.Curso.IdCurso, Gusta=true})'>
+            <img src="/img/megustaSI.png" style="width: 7rem;">
+            <h3>@ViewBag.Curso.MeGusta</h3>
+        </a>
+        <a style="margin-left: 2rem;" class="btn btn-warning botino2" href='@Url.Action("Calificar","Home",new {IdCurso=@ViewBag.Curso.IdCurso, Gusta=false})'>
+            <img src="/img/megustaNO.png" style="width: 7rem;">
+            <h3>@ViewBag.Curso.NoMeGusta</h3>
+        </a>
+    </div>
+
+
+
+    </div>
+    </center>
+</div>
+
+<BR><BR><BR><BR><BR><BR>

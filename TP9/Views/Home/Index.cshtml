@@ -1,0 +1,31 @@
+﻿@if(ViewBag.ListadoPizza.Count==0){
+    <div class="btn btn-dark" style="margin-left:29%; margin-bottom:25%">
+        <h2 style="color:white; text-align:center;">No hay ninguna pizza todavia</h2>
+    </div>
+}else{
+    <div class="row fila">
+        @foreach (Pizza pizzas in ViewBag.ListadoPizza)
+        {
+            <center>
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <div class="card levantar card text-white mb-3" style="background-color:#1e304c; width: 18rem;">
+                            <img src="@pizzas.UrlFoto" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h1 class="card-tittle">@pizzas.Nombre</h1>
+                                <h2 style="color:#3eff3f;" class="card-text">$@pizzas.Precio</h2>
+                                <a class="btn btn-danger" href='@Url.Action("EliminarPizza","Home", new {IdPizza= pizzas.IdPizza})'>Eliminar Pizza</a>
+                                <a class="btn btn-danger" href='@Url.Action("detallePizza","Home", new {IdPizza= pizzas.IdPizza})'>Ver Pizza</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        }
+    </div>
+}
+
+
+
+
+

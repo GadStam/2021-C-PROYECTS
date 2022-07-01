@@ -1,0 +1,21 @@
+<section class="formulario">
+    <center>
+        <form method="post" action='@Url.Action("GuardarCurso","Home")'>
+            <h2>CREA TU CURSO</h2><br/>
+            <input class="ingresos" type="text" name="Nombre" placeholder="Ingrese el nombre" required>
+            <input class="ingresos" type="textarea" name="Descripcion" placeholder="Ingrese una descripción" required>
+            <input class="ingresos" type="text" name="Imagen" placeholder="Ingrese la URL de la foto" required>
+            <input class="ingresos" type="text" name="UrlCurso" placeholder="Ingrese video embebido" required> 
+            <h5>Elija Especialidad</h5>
+            <select class="form-select form-select-lg mb-3 ingresos" name="IdCurso" aria-label=".form-select-lg example" required>
+                @{
+                    List<Especialidad> Lista = BD.ListarEspecialidades();
+                    foreach (Especialidad Especialidades in Lista){
+                            <option value="@Especialidades.IdEspecialidad">@Especialidades.Nombre</option>
+                    }                
+                }       
+            </select>
+            <button style="margin-top:1rem; width: 8rem;" type="submit" class="btn btn-dark"><h6>CONFIRMAR</h6></button>
+        </form>    
+    </center>
+</section>

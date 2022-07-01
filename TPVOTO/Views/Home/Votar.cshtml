@@ -1,0 +1,35 @@
+<section class="formulario">
+    <center>
+        <h1>@ViewBag.YaVoto</h1>
+        <h1>@ViewBag.Nocoincide</h1>
+        <form method="post" action='@Url.Action("Votar","Home")'>
+            <h3>Nombre y Apellido:</h3><br/>
+            <div class="form-row">
+                <div class="col">
+                    <input class="ingresos" placeholder="@ViewBag.Persona.Nombre" readonly></br>
+                </div>
+                <div class="col">
+                    <input class="ingresos" placeholder="@ViewBag.Persona.Apellido" readonly></br>
+                </div>
+            </div>
+            <h3>DNI:<input class="ingresos" style="width=5px" value="@ViewBag.Persona.DNI" type="text" name="DNI" readonly></br></h3>
+            <h3>Establecimiento:<input class="ingresos" type="text" placeholder="@ViewBag.MiEstablecimiento.Nombre" readonly></br></h3>
+            @if(ViewBag.Persona.Voto==true){
+                <h3>Fecha de voto</h3>
+                <input class="ingresos" type="text" placeholder="@ViewBag.Persona.Fecha_Voto.ToShortDateString()" readonly>
+            }
+            <h3>Ingresar tu Numero de Tramite:<br/></h3>
+            <input class="ingresos" type="number" value="NumeroTramite" name="NumeroTramite" placeholder="Ingrese su numero de tramite">
+            <div class="form-row">
+                <div class="col-6">
+                    <button style="margin-top:1rem; width: 8rem;" type="submit" class="btn btn-dark"><h6>CONFIRMAR</h6></button>
+                </div>
+                <div class="col-6">
+                    <a style="margin-top:1rem; width: 8rem;" class="btn btn-dark" href='@Url.Action("Index","Home")'>Volver</a>
+                </div>
+            </div>
+        </form>    
+    </center>
+</section>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
